@@ -1,16 +1,28 @@
-# Compiled class file
-*.class
+#   universally applicable .gitignore
+#   @notnatedavis
 
-# Log file
+#   useless
+.vscode/
+.idea/
+.env
+.env.local
+node_modules/
+package-lock.json
+dist/
+*.DS_Store
+*.class
+npm-debug.log*
+
+#   Project Specific
 *.log
 
-# BlueJ files
+#   BlueJ files
 *.ctxt
 
-# Mobile Tools for Java (J2ME)
+#   Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
-# Package Files #
+#   Package Files #
 *.jar
 *.war
 *.nar
@@ -19,6 +31,6 @@
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+#   virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
