@@ -10,6 +10,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.PatientRecord;
+import utils.NavigationController;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.UUID;
@@ -52,11 +54,10 @@ public class PatientIntakeView {
                 ex.printStackTrace();
             }
             
-            // Show success message
-            showMainMenu(stage);
+            NavigationController.showMainMenu();
         });
         
-        backButton.setOnAction(e -> showMainMenu(stage));
+        backButton.setOnAction(e -> NavigationController.showMainMenu());
         
         GridPane formGrid = new GridPane();
         formGrid.setHgap(10);
@@ -77,12 +78,7 @@ public class PatientIntakeView {
         VBox layout = new VBox(20, formGrid, saveButton, backButton);
         layout.setPadding(new javafx.geometry.Insets(20));
         
-        stage.setScene(new Scene(layout, 500, 500));
-        stage.show();
-    }
-    
-    private void showMainMenu(Stage stage) {
-        MainUI mainUI = new MainUI();
-        mainUI.showMainMenu();
+        Scene scene = new Scene(layout, 500, 500);
+        NavigationController.navigateTo(scene, "Patient Intake");
     }
 }

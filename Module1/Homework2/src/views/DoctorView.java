@@ -9,6 +9,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import utils.NavigationController;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -85,7 +87,7 @@ public class DoctorView {
             }
         });
         
-        backButton.setOnAction(e -> showMainMenu(stage));
+        backButton.setOnAction(e -> NavigationController.showMainMenu());
         
         GridPane inputGrid = new GridPane();
         inputGrid.setHgap(10);
@@ -109,12 +111,7 @@ public class DoctorView {
         VBox layout = new VBox(20, inputGrid, resultsGrid, determineRiskButton, backButton);
         layout.setPadding(new javafx.geometry.Insets(20));
         
-        stage.setScene(new Scene(layout, 500, 450));
-        stage.show();
-    }
-    
-    private void showMainMenu(Stage stage) {
-        MainUI mainUI = new MainUI();
-        mainUI.showMainMenu();
+        Scene scene = new Scene(layout, 500, 500);
+        NavigationController.navigateTo(scene, "Doctor View");
     }
 }

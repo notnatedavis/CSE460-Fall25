@@ -11,14 +11,19 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import utils.NavigationController;
 
 public class MainUI extends Application {
     private Stage primaryStage;
+    private Scene mainMenuScene;
     
     @Override
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
         primaryStage.setTitle("Heart Health Imaging and Recording System");
+        
+        // Set up navigation controller
+        NavigationController.setPrimaryStage(primaryStage);
         
         showMainMenu();
     }
@@ -55,7 +60,10 @@ public class MainUI extends Application {
         layout.setPadding(new Insets(20));
         layout.setAlignment(Pos.CENTER);
         
-        primaryStage.setScene(new Scene(layout, 500, 400));
+        mainMenuScene = new Scene(layout, 500, 400);
+        NavigationController.setMainMenuScene(mainMenuScene);
+        
+        primaryStage.setScene(mainMenuScene);
         primaryStage.show();
     }
     
