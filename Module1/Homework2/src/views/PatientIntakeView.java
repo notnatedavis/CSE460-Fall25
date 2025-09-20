@@ -14,7 +14,7 @@ import utils.NavigationController;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.UUID;
+import java.util.Random;
 
 public class PatientIntakeView {
     public void show(Stage stage) {
@@ -31,7 +31,11 @@ public class PatientIntakeView {
         Button backButton = new Button("Back to Main Menu");
         
         saveButton.setOnAction(e -> {
-            String patientID = UUID.randomUUID().toString().substring(0, 8);
+            // generate random 5-digit patientID
+            Random random = new Random();
+            int randomNumber = random.nextInt(90000) + 10000; // Generates a number between 10000 and 99999
+            String patientID = String.valueOf(randomNumber);
+
             PatientRecord record = new PatientRecord();
             record.patientID = patientID;
             record.firstName = firstName.getText();
@@ -41,7 +45,7 @@ public class PatientIntakeView {
             record.healthHistory = history.getText();
             record.insuranceID = insurance.getText();
             
-            // Save to file
+            // save to file
             try (FileWriter writer = new FileWriter(patientID + "_PatientInfo.txt")) {
                 writer.write("Patient ID: " + patientID + "\n");
                 writer.write("First Name: " + record.firstName + "\n");

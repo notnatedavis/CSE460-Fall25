@@ -1,12 +1,14 @@
 //   src/views/PatientView.java
 package views;
 
+import javafx.geometry.Pos;
 //   imports
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import utils.NavigationController;
@@ -31,6 +33,11 @@ public class PatientView {
         Label lcxLabel = new Label("LCX: ");
         Label rcaLabel = new Label("RCA: ");
         Label pdaLabel = new Label("PDA: ");
+
+        // center the patient name label
+        patientNameLabel.setAlignment(Pos.CENTER);
+        HBox centeredNameBox = new HBox(patientNameLabel);
+        centeredNameBox.setAlignment(Pos.CENTER);
         
         loadButton.setOnAction(e -> {
             String patientID = patientIDField.getText();
@@ -91,14 +98,17 @@ public class PatientView {
         GridPane resultsGrid = new GridPane();
         resultsGrid.setHgap(10);
         resultsGrid.setVgap(10);
-        resultsGrid.add(patientNameLabel, 0, 0, 2, 1);
+
+        // Use the centered name box instead of the label directly
+        resultsGrid.add(centeredNameBox, 0, 0, 2, 1);
         resultsGrid.add(totalScoreLabel, 0, 1, 2, 1);
-        resultsGrid.add(new Label("Vessel level Agatston CAC score:"), 0, 2, 2, 1);
-        resultsGrid.add(lmLabel, 0, 3);
-        resultsGrid.add(ladLabel, 1, 3);
+
+        // single column layout for vessel scores
+        resultsGrid.add(lmLabel, 0, 2);
+        resultsGrid.add(ladLabel, 0, 3);
         resultsGrid.add(lcxLabel, 0, 4);
-        resultsGrid.add(rcaLabel, 1, 4);
-        resultsGrid.add(pdaLabel, 0, 5);
+        resultsGrid.add(rcaLabel, 0, 5);
+        resultsGrid.add(pdaLabel, 0, 6);
         
         VBox layout = new VBox(20, inputGrid, resultsGrid, backButton);
         layout.setPadding(new javafx.geometry.Insets(20));
