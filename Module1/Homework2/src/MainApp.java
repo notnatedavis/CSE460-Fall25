@@ -1,6 +1,6 @@
 //   src/MainApp.java
 
-// imports
+//   imports
 import javafx.application.Application;
 import javafx.stage.Stage;
 import views.MainUI;
