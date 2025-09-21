@@ -2,17 +2,17 @@
 package model;
 
 public class HeartSpecialist extends User {
-    private CTTest ctTest; // Aggregation to CTTest
+    private CTTest ctTest; // aggregation to CTTest
     
     public void reviewCTScanResults() {
-        // logic here
+        // logic here at some point , just a placeholder
     }
 
     public void determineRisk() {
-        // logic here
+        // logic here at some point , just a placeholder
     }
 
     public void communicateResultsToPatient() {
-        // logic here
+        // logic here at some point , just a placeholder
     }
 }

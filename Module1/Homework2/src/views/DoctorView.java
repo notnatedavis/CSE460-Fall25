@@ -39,7 +39,7 @@ public class DoctorView {
         // risk assessment panel
         VBox riskPanel = createRiskPanel();
         TextArea riskTextArea = (TextArea) riskPanel.getChildren().get(1); 
-        // Get the text area
+        // get the text area
         
         loadButton.setOnAction(e -> {
             String patientID = patientIDField.getText();
@@ -75,7 +75,7 @@ public class DoctorView {
         });
         
         determineRiskButton.setOnAction(e -> {
-            // Simple risk determination based on total CAC score
+            // risk determination logic
             try {
                 String totalScoreText = totalScoreLabel.getText().split(": ")[1];
                 int totalScore = Integer.parseInt(totalScoreText);
@@ -125,15 +125,15 @@ public class DoctorView {
         VBox resultsPanel = new VBox(20, inputGrid, resultsGrid, determineRiskButton, backButton);
         resultsPanel.setPadding(new javafx.geometry.Insets(20));
         
-        // Create main layout with results on left and risk panel on right
+        // create main layout with results on left and risk panel on right
         HBox mainLayout = new HBox(20, resultsPanel, riskPanel);
         mainLayout.setPadding(new javafx.geometry.Insets(20));
         
-        // Make both panels expand to fill available space
+        // make both panels expand to fill available space
         HBox.setHgrow(resultsPanel, Priority.ALWAYS);
         HBox.setHgrow(riskPanel, Priority.ALWAYS);
         
-        Scene scene = new Scene(mainLayout, 800, 500); // Increased width to accommodate both panels
+        Scene scene = new Scene(mainLayout, 800, 500); // increased width to fit both panels
         NavigationController.navigateTo(scene, "Doctor View");
     }
 

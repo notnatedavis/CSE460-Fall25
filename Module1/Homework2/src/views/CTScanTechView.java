@@ -18,6 +18,7 @@ public class CTScanTechView {
     public void show(Stage stage) {
         stage.setTitle("CT Scan Technician View");
         
+        // input fields
         TextField patientID = new TextField();
         TextField totalScore = new TextField();
         TextField lmScore = new TextField();
@@ -26,6 +27,7 @@ public class CTScanTechView {
         TextField rcaScore = new TextField();
         TextField pdaScore = new TextField();
         
+        // actions
         Button saveButton = new Button("Save Results");
         Button backButton = new Button("Back to Main Menu");
         
@@ -63,7 +65,7 @@ public class CTScanTechView {
         formGrid.add(new Label("The total Agatston CAC score:"), 0, 1);
         formGrid.add(totalScore, 1, 1);
         formGrid.add(new Label("Vessel level Agatston CAC score"), 0, 2);
-        formGrid.add(new Label(""), 1, 2); // Empty cell for spacing
+        formGrid.add(new Label(""), 1, 2); // empty cell for spacing
         formGrid.add(new Label("LM:"), 0, 3);
         formGrid.add(lmScore, 1, 3);
         formGrid.add(new Label("LAD:"), 0, 4);

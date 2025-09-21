@@ -2,17 +2,17 @@
 package model;
 
 public class CTScanTechnician extends User{
-    private CTTest ctTest; // Aggregation to CTTest
+    private CTTest ctTest; // aggregation to CTTest
     
     public void performCTScan() {
-        // logic here
+        // logic here at some point , just a placeholder
     }
 
     public void recordCACScore() {
-        // logic here
+        // logic here at some point , just a placeholder
     }
 
     public void saveCTScanResults() {
-        // logic here
+        // logic here at some point , just a placeholder
     }
 }

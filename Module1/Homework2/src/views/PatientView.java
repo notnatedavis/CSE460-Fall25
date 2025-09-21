@@ -25,7 +25,7 @@ public class PatientView {
         Button loadButton = new Button("Load Results");
         Button backButton = new Button("Back to Main Menu");
         
-        // Result display fields
+        // result display fields
         Label patientNameLabel = new Label("Hello Patient");
         Label totalScoreLabel = new Label("The total Agatston CAC score: ");
         Label lmLabel = new Label("LM: ");
@@ -42,7 +42,7 @@ public class PatientView {
         loadButton.setOnAction(e -> {
             String patientID = patientIDField.getText();
             
-            // Load patient info
+            // load patient info
             try (BufferedReader reader = new BufferedReader(new FileReader(patientID + "_PatientInfo.txt"))) {
                 String line;
                 while ((line = reader.readLine()) != null) {
@@ -57,7 +57,7 @@ public class PatientView {
                 patientNameLabel.setText("Patient not found");
             }
             
-            // Load CT results
+            // load CT results
             try (BufferedReader reader = new BufferedReader(new FileReader(patientID + "_CTResults.txt"))) {
                 String line;
                 while ((line = reader.readLine()) != null) {
@@ -76,7 +76,7 @@ public class PatientView {
                     }
                 }
             } catch (IOException ex) {
-                // Results not found, clear labels
+                // results not found, clear labels
                 totalScoreLabel.setText("The total Agatston CAC score: ");
                 lmLabel.setText("LM: ");
                 ladLabel.setText("LAD: ");
@@ -99,7 +99,7 @@ public class PatientView {
         resultsGrid.setHgap(10);
         resultsGrid.setVgap(10);
 
-        // Use the centered name box instead of the label directly
+        // use the centered name box instead of the label directly
         resultsGrid.add(centeredNameBox, 0, 0, 2, 1);
         resultsGrid.add(totalScoreLabel, 0, 1, 2, 1);
 

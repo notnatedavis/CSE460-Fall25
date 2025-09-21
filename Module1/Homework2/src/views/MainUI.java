@@ -22,13 +22,13 @@ public class MainUI extends Application {
         this.primaryStage = primaryStage;
         primaryStage.setTitle("Heart Health Imaging and Recording System");
         
-        // Set up navigation controller
+        // set up navigation controller
         NavigationController.setPrimaryStage(primaryStage);
         
         showMainMenu();
     }
     
-    public void showMainMenu() {
+    public void showMainMenu() { // main entry page
         Text title = new Text("Welcome to Heart Health Imaging and Recording System");
         title.setFont(Font.font(18));
         

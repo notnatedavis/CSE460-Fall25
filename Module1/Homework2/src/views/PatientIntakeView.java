@@ -33,7 +33,7 @@ public class PatientIntakeView {
         saveButton.setOnAction(e -> {
             // generate random 5-digit patientID
             Random random = new Random();
-            int randomNumber = random.nextInt(90000) + 10000; // Generates a number between 10000 and 99999
+            int randomNumber = random.nextInt(90000) + 10000; // generates a number between [10000 - 99999]
             String patientID = String.valueOf(randomNumber);
 
             PatientRecord record = new PatientRecord();

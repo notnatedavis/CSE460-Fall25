@@ -13,10 +13,10 @@ public class CTTest {
     public int PDAScore;
 
     public void storeCTScanData() {
-        // logic here
+        // logic here at some point , just a placeholder
     }
 
     public void getCACScores() {
-        // logic here
+        // logic here at some point , just a placeholder
     }
 }

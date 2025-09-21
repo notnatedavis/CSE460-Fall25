@@ -9,15 +9,15 @@ public class Appointment {
     public String patientID;
     public Date appointmentDate;
 
-    private CTScanTechnician ctScanTechnician; // Association
-    private Receptionist receptionist; // Association
+    private CTScanTechnician ctScanTechnician; // association
+    private Receptionist receptionist; // association
 
     public void scheduleCTScan() {
-        // logic here
+        // logic here at some point , just a placeholder
     }
 
     public void provideAppointment() {
-        // logic here
+        // logic here at some point , just a placeholder
     }
 
     // add (constructor, getters, setters) at some point

@@ -11,10 +11,10 @@ public class PatientRecord {
     public String insuranceID;
 
     public void storePatientInformation() {
-        // logic here
+        // logic here at some point , just a placeholder
     }
 
     public void getPatientInformation() {
-        // logic here
+        // logic here at some point , just a placeholder
     }
 }
